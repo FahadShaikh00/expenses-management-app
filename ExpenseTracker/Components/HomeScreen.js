@@ -11,7 +11,7 @@ export default function HomeScreen({navigation}) {
     useEffect(() => {
       const fetchUserInfo = async () => {
         const info = await getUserInfo();
-        setUserInfo(info.data);
+        setUserInfo(info);
         console.log("on homescreen",info);
       };
   
@@ -35,7 +35,7 @@ export default function HomeScreen({navigation}) {
       <View style={styles.header}>
         <View style={styles.profileContainer}>
           <Image source={{ uri: 'https://via.placeholder.com/150' }} style={styles.profileImage} />
-          <Text>{userInfo.username}</Text>
+          <Text>{userInfo?.username}</Text>
         </View>
         <View style={styles.monthContainer}>
           <Text style={styles.monthText}>October</Text>
